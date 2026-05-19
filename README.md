@@ -1,55 +1,129 @@
-# DoomGuard — AI Scroll Addiction Detector
+# 🛡️ DoomGuard — AI Scroll Addiction Detector
 
-Hackathon MVP: tracks social app usage (or demo data), computes a **Doomscrolling score**, and calls **Google Gemini** for personalized wellness coaching.
+> Fight Doomscrolling. Reclaim Your Focus.
 
-## Setup
+DoomGuard is an AI-powered Android application that detects unhealthy scrolling behavior and provides personalized digital wellness insights using the Google Gemini API.
 
-1. Open the project in **Android Studio** (Ladybug+). Let it sync Gradle and download SDK 35 if prompted.
-2. Create or edit **`local.properties`** in the project root (same folder as `settings.gradle.kts`) and add your Gemini key:
+Built for the **Hack Days Ankara** hackathon challenge, DoomGuard combines behavioral analytics, screen-time monitoring, and generative AI to help users better understand and reduce excessive social media usage.
 
-   ```properties
-   GEMINI_API_KEY=your_key_here
-   ```
+---
 
-   The build injects this into `BuildConfig.GEMINI_API_KEY`. Do not commit real keys.
+# 🚀 Features
 
-3. **Usage access**: On a device/emulator, grant *Settings → Apps → Special app access → Usage access* for DoomGuard if you want live stats. **Demo mode** (default) works without it for pitches.
+## 📊 Smart Usage Tracking
+DoomGuard tracks:
+- Social media usage duration
+- Continuous scrolling sessions
+- Late-night phone activity
+- Most-used applications
+- Screen-time patterns
 
-4. Run the **app** configuration on an API 26+ device.
+Supported platforms include:
+- Instagram
+- TikTok
+- YouTube
+- Facebook
+- Twitter/X
+- Snapchat
 
-## Stack
+---
 
-- Kotlin, Jetpack Compose, Material 3, Navigation
-- MVVM (`DoomViewModel`), coroutines, DataStore, Room
-- `UsageStatsManager` + usage events for supported social packages
-- Retrofit + OkHttp + Moshi → Gemini `generateContent`
-- Optional notification nudges (POST_NOTIFICATIONS on Android 13+)
+## 🧠 AI-Powered Insights (Google Gemini)
+Using the Gemini API, DoomGuard generates:
+- Behavioral analysis
+- Doomscrolling severity assessment
+- Productivity impact insights
+- Sleep impact analysis
+- Personalized wellness recommendations
+- Motivational focus guidance
 
-## App flow
+Example AI Insight:
 
-```mermaid
-flowchart TD
-  A[Splash] --> B[Permissions + demo toggle]
-  B --> C[Dashboard]
-  C --> D[Usage / demo summary]
-  D --> E[Addiction score]
-  E --> F[Gemini insight on demand]
-  F --> G[Room history]
-```
+> “You spent enough time scrolling today to complete two study chapters.”
 
-## Screens
+---
 
-- **Splash** → **Permissions** (usage explanation, demo mode)
-- **Home**: score, wellness meter, stats, Gemini card, FAB for full AI view
-- **History**: saved daily AI reports
-- **Settings**: demo mode, nudges, usage settings shortcut
+## ⚠️ Smart Wellness Warnings
+DoomGuard intelligently detects unhealthy usage and displays real-time warnings:
 
-## Gemini
+- “You’ve been scrolling for 45 minutes continuously.”
+- “Late-night scrolling may affect your sleep quality.”
 
-- Abstraction: `GeminiApi`, `GeminiRepository`, `PromptBuilder`
-- Default model: `gemini-1.5-flash` (change in `GeminiRepository` if needed)
-- Retries with backoff on failure
+---
 
-## License
+## 🎯 Focus Mode
+A distraction-reduction mode that helps users:
+- Start focus sessions
+- Reduce interruptions
+- Improve productivity
+- Stay mindful of usage habits
 
-Hackathon prototype — use as needed for your team’s submission.
+---
+
+## 📈 Doomscrolling Score
+DoomGuard calculates a personalized addiction score based on:
+- Session duration
+- Usage frequency
+- Nighttime activity
+- Social media exposure
+
+Risk Levels:
+- 🟢 Healthy
+- 🟡 Moderate
+- 🟠 High
+- 🔴 Severe
+
+---
+
+# 🏗️ Tech Stack
+
+## Android
+- Kotlin
+- Jetpack Compose
+- MVVM Architecture
+
+## AI Integration
+- Google Gemini API
+
+## Background Monitoring
+- UsageStatsManager
+- Accessibility Services
+
+## Networking
+- Retrofit
+- OkHttp
+
+## Async Processing
+- Kotlin Coroutines
+
+---
+
+# 📱 Screens
+
+- Splash Screen
+- Onboarding
+- Permission Setup
+- Home Dashboard
+- Usage Analytics
+- AI Insights
+- Focus Mode
+- Smart Warnings
+- Weekly Progress
+- Settings
+
+---
+
+# 🧠 How It Works
+
+```text
+User Scrolls Social Media
+        ↓
+DoomGuard Tracks Usage
+        ↓
+Behavior Data is Processed
+        ↓
+Gemini AI Analyzes Patterns
+        ↓
+Personalized Insights Generated
+        ↓
+User Receives Wellness Guidance

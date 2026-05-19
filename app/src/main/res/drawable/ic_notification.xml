@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Simple shield (foreground only; status bar fills background). -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M12,2L4.5,5.5v5.25c0,4.4 3.58,8.53 7.5,10.85 3.92,-2.32 7.5,-6.45 7.5,-10.85V5.5L12,2z" />
+</vector>
